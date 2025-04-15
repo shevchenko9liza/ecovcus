@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЭКОВКУС - Главная</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Подключение шрифтов -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Подключение иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Главный контейнер -->
+    <div class="container">
+        <!-- Верхнее меню -->
+        <header class="header">
+            <!-- Логотип слева -->
+            <div class="logo">
+                <img src="logo.png" alt="ЭКОВКУС">
+                <span class="logo-text">ЭКОВКУС</span>
+            </div>
+            
+            <!-- Навигация -->
+            <nav class="nav">
+                <!-- Меню-гамбургер (скрыто на десктопе) -->
+                <div class="hamburger-menu">
+                    <div class="hamburger-icon">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+                
+                <!-- Пункты меню -->
+                <ul class="menu">
+                    <li><a href="#" class="active">О нас</a></li>
+                    <li><a href="#">Тарифы</a></li>
+                    <li><a href="#">Мероприятия</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Иконки справа -->
+            <div class="header-icons">
+                <a href="#" class="icon-bell">
+                    <i class="fas fa-bell"></i>
+                </a>
+                <a href="#" class="icon-user">
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
+        </header>
+        
+        <!-- Основной контент -->
+        <main class="main-content">
+            <!-- Секция приветствия -->
+            <section class="hero">
+                <div class="hero-text">
+                    <h1 class="headline">Все грани здоровья <br>в одном пространстве</h1>
+                    <p class="subheadline">Комплексная онлайн платформа, <br>сопровождающая вас на всех этапах жизни</p>
+                    <button class="cta-button">Выбрать тариф</button>
+                </div>
+                <div class="hero-image">
+                    <img src="woman.jpg" alt="Здоровый образ жизни">
+                    <div class="quote-box">
+                        <p>Мы уже подготовили<br>программу<br>оздоровления для тебя</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Секция преимуществ -->
+            <section class="features">
+                <div class="feature-card green">
+                    <h3>"Предложение о скидке"</h3>
+                </div>
+                <div class="feature-card green">
+                    <h3>"Бонус"</h3>
+                </div>
+                <div class="feature-card light">
+                    <p>Доступ к постоянно обновляющемуся контенту</p>
+                </div>
+                <div class="feature-card light">
+                    <p>Онлайн и офлайн мероприятия</p>
+                    <img src="yoga.jpg" alt="Йога" class="feature-img">
+                </div>
+                <div class="feature-card light">
+                    <p>AI - консультант и 3D-модель вашего тела</p>
+                </div>
+                <div class="feature-card light">
+                    <p>Индивидуальный и комплексный подход на основе глубокого анализа вашего организма</p>
+                </div>
+            </section>
+            
+            <!-- Секция тарифов -->
+            <section class="tariffs">
+                <h2 class="section-title">Тарифы</h2>
+                <div class="tariff-cards">
+                    <div class="tariff-card">
+                        <h3>Базовый</h3>
+                        <p class="tariff-type">"Функционал"</p>
+                        <div class="tariff-price">2 550 ₽</div>
+                    </div>
+                    <div class="tariff-card">
+                        <h3>Оптимальный</h3>
+                        <p class="tariff-type">"Функционал"</p>
+                        <div class="tariff-price">5 550 ₽</div>
+                    </div>
+                    <div class="tariff-card">
+                        <h3>Премиум</h3>
+                        <p class="tariff-type">"Функционал"</p>
+                        <div class="tariff-price">10 550 ₽</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Секция мероприятий -->
+            <section class="events">
+                <h2 class="section-title">Мероприятия</h2>
+                <div class="events-gallery">
+                    <div class="event-large">
+                        <img src="event1.jpg" alt="Тренировка">
+                    </div>
+                    <div class="event-medium">
+                        <img src="event2.jpg" alt="Стретчинг">
+                        <div class="event-overlay">
+                            <h3>STRETCHING</h3>
+                        </div>
+                    </div>
+                    <div class="event-small">
+                        <img src="event3.jpg" alt="Групповое занятие">
+                    </div>
+                    <div class="event-small">
+                        <img src="event4.jpg" alt="Тренировка в зале">
+                    </div>
+                    <div class="event-small">
+                        <img src="event5.jpg" alt="Смузи">
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Подвал сайта -->
+        <footer class="footer">
+            <div class="logo footer-logo">
+                <img src="logo.png" alt="ЭКОВКУС">
+                <span class="logo-text">ЭКОВКУС</span>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

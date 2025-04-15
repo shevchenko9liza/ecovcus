@@ -1,0 +1,399 @@
+/* Базовые стили и сброс */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+/* Контейнер для всей страницы */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+/* Стили для шапки сайта */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    position: relative;
+}
+
+/* Логотип */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4CAF50;
+}
+
+/* Навигационное меню */
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Скрываем гамбургер меню на десктопе */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #4CAF50;
+}
+
+/* Пункты меню */
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.menu a:hover, .menu a.active {
+    color: #4CAF50;
+}
+
+/* Иконки в шапке */
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons a {
+    margin-left: 15px;
+    color: #4CAF50;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* Основной контент */
+.main-content {
+    padding: 15px;
+}
+
+/* Секция приветствия */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.headline {
+    font-size: 24px;
+    font-weight: 500;
+    color: #4CAF50;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* Подчеркивание "в одном пространстве" */
+.headline::after {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    background-color: #4CAF50;
+    bottom: -5px;
+    left: 50px;
+    border-radius: 50%;
+}
+
+.subheadline {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+    max-width: 50%;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+.quote-box {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(76, 175, 80, 0.9);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    max-width: 60%;
+}
+
+/* Секция преимуществ */
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.feature-card {
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.green {
+    background-color: #8BC34A;
+    color: white;
+}
+
+.light {
+    background-color: #F5F5F5;
+    color: #666;
+}
+
+.feature-card h3 {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.feature-card p {
+    font-size: 14px;
+}
+
+.feature-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: auto;
+    border-radius: 0 0 0 8px;
+}
+
+/* Секция тарифов */
+.section-title {
+    font-size: 24px;
+    font-weight: 400;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.tariff-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.tariff-card {
+    flex: 1;
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px;
+}
+
+.tariff-card h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.tariff-type {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.tariff-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-top: auto;
+}
+
+/* Секция мероприятий */
+.events-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.events-gallery > div {
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.events-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.event-large {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.event-medium {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    position: relative;
+}
+
+.event-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.event-overlay h3 {
+    color: white;
+    font-size: 24px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.event-small {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/* Подвал сайта */
+.footer {
+    padding: 20px 15px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.footer-logo {
+    justify-content: center;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    /* Показываем гамбургер меню на мобильных */
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    /* Скрываем стандартное меню */
+    .menu {
+        display: none;
+    }
+    
+    /* Прячем текст логотипа, оставляем только изображение */
+    .logo-text {
+        display: none;
+    }
+    
+    /* Центрируем логотип */
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    /* Секция приветствия */
+    .hero {
+        flex-direction: column;
+    }
+    
+    .hero-image {
+        margin-top: 20px;
+        max-width: 100%;
+    }
+    
+    /* Секция тарифов */
+    .tariff-cards {
+        flex-direction: column;
+    }
+    
+    .tariff-card {
+        margin-bottom: 15px;
+    }
+    
+    /* Секция мероприятий */
+    .events-gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    
+    .event-large, .event-medium, .event-small {
+        grid-column: 1;
+        grid-row: auto;
+    }
+    
+    /* Секция преимуществ */
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
