@@ -1,399 +1,745 @@
-/* Базовые стили и сброс */
+/* Reset и базовые настройки */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    background-color: #fff;
-    line-height: 1.6;
+  background-color: white;
+  color: #333;
+  margin-bottom: 0;
 }
 
-/* Контейнер для всей страницы */
 .container {
-    max-width: 100%;
-    margin: 0 auto;
-    overflow-x: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-/* Стили для шапки сайта */
+/* ----- Шапка (Header) ----- */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background-color: #fff;
-    position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Отступы подобраны, чтобы создать компактный, но сбалансированный хедер */
+  padding: 20px 40px;
+  position: relative;
 }
 
-/* Логотип */
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: 30px;
-    margin-right: 10px;
-}
-
-.logo-text {
-    font-size: 18px;
-    font-weight: 500;
-    color: #4CAF50;
-}
-
-/* Навигационное меню */
-.nav {
-    display: flex;
-    align-items: center;
-}
-
-/* Скрываем гамбургер меню на десктопе */
+/* Гамбургер-меню – в идеале расположено в левом углу, рядом с лого */
 .hamburger-menu {
-    display: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: #4CAF50;
+  position: absolute;
+  left: 20px;
+  top: 35px; /* Немного поднято, чтобы совпадать по вертикали с логотипом */
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 100;
 }
 
-/* Пункты меню */
-.menu {
-    display: flex;
-    list-style: none;
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: #59a957;
+  border-radius: 2px;
 }
 
-.menu li {
-    margin: 0 15px;
+/* Логотип – в идеале он должен располагаться компактно, близко к гамбургеру */
+.logo {
+  display: inline-block;
+  margin-left: 30px;  /* уменьшенный отступ слева для компактности */
+  margin-top: 0;      /* выравнивание по вертикали с гамбургером */
 }
 
-.menu a {
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-    transition: color 0.3s;
+.logo-img {
+  display: block;
+  max-height: 40px;   /* чуть меньше, чтобы не затмевать хедер */
+  width: auto;
+  height: auto;
 }
 
-.menu a:hover, .menu a.active {
-    color: #4CAF50;
+.nav {
+  display: flex;
+  gap: 30px;
 }
 
-/* Иконки в шапке */
-.header-icons {
-    display: flex;
-    align-items: center;
+.nav-item {
+  color: #59a957;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 1.2;
 }
 
-.header-icons a {
-    margin-left: 15px;
-    color: #4CAF50;
-    font-size: 18px;
-    text-decoration: none;
+.user-actions {
+  display: flex;
+  gap: 20px;
 }
 
-/* Основной контент */
+.notification-icon,
+.profile-icon {
+  color: #59a957;
+  font-size: 20px;
+}
+
+/* ----- Основной блок (Hero section) ----- */
+.main-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  /* Вместо align-items: center делаем flex-start,
+     чтобы изображение и текст прижимались к верхней границе */
+  align-items: flex-start;
+
+  /* Уменьшаем отступы по вертикали, чтобы блок был выше */
+  padding: 60px 0;
+
+  position: relative;
+}
+
+/* Левая часть с заголовком/текстом */
 .main-content {
-    padding: 15px;
+  flex: 0 0 50%;
+  z-index: 2;
+  padding-right: 20px;
+
+  /* Если хочется ещё сильнее приподнять текст относительно верха, 
+     можно добавить небольшой отрицательный margin-top, например: */
+  /* margin-top: -20px; */
 }
 
-/* Секция приветствия */
-.hero {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
+/* Заголовок */
+.main-title {
+  color: #59a957;
+  font-size: 48px;
+  font-weight: normal;
+  line-height: 1.4;
+  margin-bottom: 20px; /* Меньше отступа, чтобы текст не «уезжал» слишком вниз */
+  position: relative;
 }
 
-.hero-text {
-    flex: 1;
+/* Оформление слова «здоровья» обводкой */
+.circled-word {
+  position: relative;
+  display: inline-block;
+  padding: 0 5px;
+}
+.circled-word::before {
+  content: "";
+  position: absolute;
+  border: 2px solid #59a957;
+  border-radius: 50%;
+  top: -10%;
+  left: -5%;
+  width: 110%;
+  height: 130%;
+  transform: rotate(-5deg) scaleX(1.4); /* растянут по горизонтали для соответствия идеалу */
+  box-sizing: border-box;
+  z-index: -1;
 }
 
-.headline {
-    font-size: 24px;
-    font-weight: 500;
-    color: #4CAF50;
-    margin-bottom: 10px;
-    position: relative;
+.title-underline {
+  position: absolute;
+  width: 90%;
+  height: 2px;
+  bottom: -10px;
+  right: 0;
+  border: 2px solid #59a957;
+  border-radius: 50%;
+  transform: rotate(-2deg);
 }
 
-/* Подчеркивание "в одном пространстве" */
-.headline::after {
-    content: '';
-    position: absolute;
-    width: 70%;
-    height: 2px;
-    background-color: #4CAF50;
-    bottom: -5px;
-    left: 50px;
-    border-radius: 50%;
+.main-description {
+  color: #59a957;
+  font-size: 24px;
+  line-height: 1.4; /* Можно чуть уменьшить, чтобы текст был компактнее */
+  margin-bottom: 30px;
 }
 
-.subheadline {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 20px;
-}
-
+/* Кнопка */
 .cta-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    cursor: pointer;
-    display: inline-block;
+  display: inline-block;
+  background-color: #f5f5f5;
+  color: #59a957;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 18px;
+  margin-bottom: 30px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.hero-image {
-    flex: 1;
-    position: relative;
-    max-width: 50%;
+.cta-button:hover {
+  background-color: #59a957;
+  color: #fff;
 }
 
-.hero-image img {
-    width: 100%;
-    border-radius: 8px;
-    display: block;
+.arrow-icon {
+  color: inherit;
+  margin-right: 8px;
+  font-weight: bold;
 }
 
-.quote-box {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: rgba(76, 175, 80, 0.9);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 12px;
-    max-width: 60%;
+.promo-notification {
+  display: inline-block;
+  background-color: #f5f5f5;
+  color: #59a957;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+
+  /* Вместо margin-left: 30px делаем больше, 
+     чтобы блок ушёл правее от кнопки */
+  margin-left: 80px;
+
+  position: relative;
 }
 
-/* Секция преимуществ */
-.features {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-bottom: 30px;
+.promo-arrow {
+  color: #59a957;
+  position: absolute;
+  top: 12px;  /* немного поднята для лучшего выравнивания */
+  right: 15px;
+  font-weight: bold;
 }
 
-.feature-card {
-    padding: 20px;
-    border-radius: 8px;
-    position: relative;
-    min-height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+/* Изображение в правом блоке – без абсолютных смещений для правильного выравнивания */
+.main-image {
+  flex: 0 0 45%;
+  text-align: right;
+  margin-right: -50px;
+  /* Можно приподнять весь блок изображения, 
+     если нужно, например, за счёт отриц. margin-top */
+  margin-top: -70px; */
 }
 
-.green {
-    background-color: #8BC34A;
-    color: white;
+/* Уменьшаем саму картинку, чтобы она была чуть компактнее */
+.main-image img {
+  width: 70%; /* Вместо 80% */
+  height: auto;
+  display: block;
+  filter: grayscale(100%);
+  margin: 0 auto; /* Чтобы центрировать внутри блока */
 }
 
-.light {
-    background-color: #F5F5F5;
-    color: #666;
+/* ----- Сайдбар ----- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100%;
+  background-color: #f5f5f5;
+  z-index: 999;
+  transition: left 0.3s ease;
+  padding: 30px 20px;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
 }
 
-.feature-card h3 {
-    font-weight: 500;
-    font-size: 16px;
+.sidebar.open {
+  left: 0;
 }
 
-.feature-card p {
-    font-size: 14px;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  display: none;
 }
 
-.feature-img {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: auto;
-    border-radius: 0 0 0 8px;
+.overlay.active {
+  display: block;
 }
 
-/* Секция тарифов */
-.section-title {
-    font-size: 24px;
-    font-weight: 400;
-    color: #4CAF50;
-    margin-bottom: 20px;
+.sidebar-logo {
+  display: block;
+  text-align: center;      /* Центрирование логотипа */
+  margin: 20px auto 30px;   /* Отступы сверху и снизу; можно скорректировать по необходимости */
 }
 
-.tariff-cards {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    gap: 15px;
+/* Стили для изображения логотипа внутри сайдбара */
+.sidebar-logo img {
+  max-height: 40px;        /* Задаём ту же максимальную высоту, что и для логотипа в хедере */
+  width: auto;
+  display: block;
+  margin: 0 auto;          /* Обеспечиваем горизонтальное центрирование */
+}
+
+.user-profile {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.user-avatar {
+  width: 100px;          /* Размер можно корректировать по желанию */
+  height: 100px;
+  border-radius: 50%;    /* Круглая форма */
+  overflow: hidden;      /* Обрезка изображения по границам контейнера */
+  margin: 0 auto;        /* Если нужно центрирование */
+}
+
+/* Изображение внутри контейнера */
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* Изображение заполняет контейнер, сохраняя пропорции, при этом излишки обрезаются */
+  display: block;
+}
+
+.user-name {
+  font-size: 20px;
+  font-weight: 500;
+  color: #59a957;
+  margin-bottom: 5px;
+}
+
+.user-info {
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.info-divider {
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background-color: #ccc;
+  vertical-align: middle;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 15px 0;
+}
+
+.sidebar-nav-item {
+  margin-bottom: 15px;
+}
+
+.sidebar-nav-link {
+  color: #59a957;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 5px 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar-nav-link:hover {
+  opacity: 0.8;
+}
+
+/* ----- Прочие разделы ----- */
+.offers-section {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  
+  /* Вместо top: -45px используем margin-top,
+     чтобы поднять блоки выше относительно предыдущей секции */
+  margin-top: -460px;
+  
+  /* Можешь увеличить абсолютную величину, если нужно ещё выше */
+  position: relative;
+}
+
+/* Сами блоки предложения – сделаем их уже */
+.offer-card {
+  background-color: #a5d6a7;
+  color: white;
+  
+  /* Увеличим отступы и минимальную высоту */
+  padding: 40px;
+  min-height: 150px;
+  
+  /* Задаём фиксированную (узкую) ширину: 15% от ширины родителя */
+  flex: 0 0 37%;
+  
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Увеличим шрифт */
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.info-box {
+  background-color: #f5f5f5;
+  padding: 20px 30px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  color: #59a957;
+  font-size: 18px;
+  display: inline-block;
+  max-width: 40%;
+}
+
+.benefits-section {
+  position: relative;
+  min-height: 350px;
+  margin-bottom: 80px;
+  margin-top: 15px;
+}
+
+.yoga-image {
+  position: absolute;
+  left: 0;
+  top: 150px;
+  width: 40%;
+  filter: grayscale(100%);
+  z-index: 1;
+  border-radius: 15px;
+}
+
+.benefit-cloud {
+  border: 31px solid #ffffff;
+  background-color: #f5f5f5;
+  color: #59a957;
+  padding: 20px 40px;
+  border-radius: 15px;
+  font-size: 18px;
+  position: absolute;
+}
+
+.benefit-cloud-1 {
+  top: 0;
+  left: 0;
+  width: 40%; 
+  z-index: 2;
+}
+.benefit-cloud-2 {
+  top: 110px;    /* ниже первого на ~110px */
+  left: 200px;    /* правее первого на 50px */
+  width: 40%;
+  z-index: 3;
+}
+.benefit-cloud-3 {
+  top: 220px;    /* ещё ниже */
+  left: 400px;   /* и ещё правее */
+  width: 40%;
+  z-index: 4;
+}
+.benefit-cloud-4 {
+  top: 330px;
+  left: 600px;
+  width: 40%;
+}
+
+.tariffs-section {
+  margin-bottom: 20px;
+  padding-top: 60px;
+}
+
+.tariffs-title {
+  color: #59a957;
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.tariffs-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
 }
 
 .tariff-card {
-    flex: 1;
-    background-color: #F5F5F5;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 150px;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  padding: 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
 }
 
-.tariff-card h3 {
-    font-size: 18px;
-    font-weight: 500;
-    color: #4CAF50;
-    margin-bottom: 10px;
+.tariff-name {
+  color: #59a957;
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.tariff-type {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 10px;
+.tariff-feature {
+  font-size: 16px;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .tariff-price {
-    font-size: 18px;
-    font-weight: 700;
-    color: #333;
-    margin-top: auto;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: auto;
 }
 
-/* Секция мероприятий */
+.events-section {
+  margin-bottom: 60px;
+  padding-top: 5px;
+}
+
+.events-title {
+  color: #59a957;
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
 .events-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 15px;
-    margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 40px;
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  max-height: 400px;
 }
 
-.events-gallery > div {
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
+/* Первый элемент занимает две строки */
+.gallery-item-1 {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
-.events-gallery img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+/* Второй элемент занимает две строки */
+.gallery-item-2 {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
-.event-large {
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
+/* Третий элемент */
+.gallery-item-3 {
+  grid-column: 3;
+  grid-row: 1;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
-.event-medium {
-    grid-column: 2 / 3;
-    grid-row: 1 / 3;
-    position: relative;
+/* Четвертый элемент */
+.gallery-item-4 {
+  grid-column: 3;
+  grid-row: 2;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
-.event-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.2);
+.gallery-item-5 {
+  display: none;
 }
 
-.event-overlay h3 {
-    color: white;
-    font-size: 24px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+/* Стили для изображения, чтобы оно всегда заполняло контейнер в виде прямоугольника */
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.event-small {
-    grid-column: span 1;
-    grid-row: span 1;
+/* Дополнительные стили, если используются в оверлеях */
+.gallery-overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  color: white;
 }
 
-/* Подвал сайта */
+.gallery-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.gallery-property {
+  font-size: 14px;
+  margin: 5px 0;
+  text-align: right;
+}
+
+.divider {
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+/* Футер – центрируем содержимое */
 .footer {
-    padding: 20px 15px;
-    border-top: 1px solid #eee;
-    text-align: center;
+  text-align: center;
+  margin-bottom: 0px;
 }
 
+/* Логотип в футере – наследуем стиль от хедера */
 .footer-logo {
-    justify-content: center;
+  display: inline-block;
+  margin: 0 auto;
+  max-height: 40px;  /* Используем ту же максимальную высоту, что и для логотипа в хедере */
+  width: auto;
 }
 
-/* Медиа-запросы для адаптивности */
+/* Подпись под логотипом */
+.footer-caption {
+  font-size: 12px;    /* Размер можно скорректировать под дизайн */
+  color: #59a957;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+
+/* Отключение прокрутки при открытом сайдбаре */
+body.no-scroll {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/***********************************************************
+ * Секция Тренировки
+ ************************************************************/
+#trainings {
+  /* Можно задать фоновый цвет, если нужно */
+  background-color: white;
+  min-height: 100vh; /* на всю высоту экрана */
+}
+
+/* Контейнер внутри секции */
+.trainings-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 15px; /* отступы сверху-снизу, слева-справа */
+}
+
+/* Левая часть */
+.trainings-left,
+.trainings-right {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Заголовок Тренировки */
+.trainings-title {
+  font-size: 40px;
+  color: #59a957; /* фирменный зелёный */
+  margin-bottom: 10px;
+}
+
+/* Карточка с калориями */
+.kcal-card {
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  padding: 20px;
+}
+.kcal-value {
+  font-size: 36px;
+  color: #59a957;
+  margin-bottom: 10px;
+}
+.kcal-chart {
+  width: 100%;
+  height: 150px; /* Под график можно зарезервировать место */
+  background-color: #fff;
+  border-radius: 10px;
+  /* заглушка – под реальную диаграмму */
+}
+
+/* Карточка «Анализы» */
+.analysis-card {
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  padding: 20px;
+}
+.analysis-card h3 {
+  color: #59a957;
+  margin-bottom: 10px;
+}
+.analysis-list {
+  list-style: none;
+  padding: 0;
+  color: #333;
+}
+
+/* Правая часть */
+.encouragement {
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  padding: 20px;
+  color: #59a957;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* Карточка «Показатели» */
+.metrics-card {
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  padding: 20px;
+}
+.metrics-card h3 {
+  color: #59a957;
+  margin-bottom: 10px;
+}
+.metrics-list {
+  list-style: none;
+  padding: 0;
+  color: #333;
+}
+
+/* Картинка человека */
+.person-figure {
+  text-align: center;
+}
+.person-figure img {
+  max-width: 100%;
+  height: auto;
+  /* Можно добавить тень или рамку при желании */
+}
+
+/***********************************************************
+ * Адаптивная часть (пример)
+ ************************************************************/
 @media (max-width: 768px) {
-    /* Показываем гамбургер меню на мобильных */
-    .hamburger-menu {
-        display: block;
-        position: absolute;
-        left: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    
-    /* Скрываем стандартное меню */
-    .menu {
-        display: none;
-    }
-    
-    /* Прячем текст логотипа, оставляем только изображение */
-    .logo-text {
-        display: none;
-    }
-    
-    /* Центрируем логотип */
-    .logo {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    /* Секция приветствия */
-    .hero {
-        flex-direction: column;
-    }
-    
-    .hero-image {
-        margin-top: 20px;
-        max-width: 100%;
-    }
-    
-    /* Секция тарифов */
-    .tariff-cards {
-        flex-direction: column;
-    }
-    
-    .tariff-card {
-        margin-bottom: 15px;
-    }
-    
-    /* Секция мероприятий */
-    .events-gallery {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-    
-    .event-large, .event-medium, .event-small {
-        grid-column: 1;
-        grid-row: auto;
-    }
-    
-    /* Секция преимуществ */
-    .features {
-        grid-template-columns: 1fr;
-    }
+  .trainings-container {
+    flex-direction: column;
+  }
 }
