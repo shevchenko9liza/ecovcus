@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЭкоВкус - Все грани здоровья</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Пример стиля для скрытия секций */
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Затемнение фона при открытом меню -->
+  <div class="overlay" id="overlay"></div>
+  
+  <!-- Боковая панель (сайдбар) -->
+  <div class="sidebar" id="sidebar">
+      <!-- Логотип в боковой панели -->
+      <a href="#" class="sidebar-logo">
+          <img src="images/logo.png" alt="ЭкоВкус логотип">
+      </a>
+      
+      <!-- Профиль пользователя -->
+      <div class="user-profile">
+          <!-- Аватар пользователя -->
+          <div class="user-avatar">
+            <img src="images/face.jpg" alt="Аватар пользователя">
+          </div>
+          <!-- Имя пользователя -->
+          <div class="user-name">Волошина В.</div>
+          <!-- Информация о пользователе -->
+          <div class="user-info">
+              <span>+7 888 888 - 88 - 88</span>
+              <span class="info-divider"></span>
+              <span>@kudderre</span>
+          </div>
+      </div>
+      
+      <!-- Навигация в боковой панели -->
+      <ul class="sidebar-nav">
+          <li class="sidebar-nav-item">
+              <a href="#" class="sidebar-nav-link" data-target="about">Данные</a>
+          </li>
+          <li class="sidebar-nav-item">
+              <a href="#" class="sidebar-nav-link" data-target="level">Уровень</a>
+          </li>
+          <li class="sidebar-nav-item">
+              <a href="#" class="sidebar-nav-link" data-target="friends">Друзья</a>
+          </li>
+          <li class="sidebar-nav-item">
+              <a href="#" class="sidebar-nav-link" data-target="trainings">Тренировки</a>
+          </li>
+          <li class="sidebar-nav-item">
+              <a href="#" class="sidebar-nav-link" data-target="nutrition">Питание</a>
+          </li>
+          <li class="sidebar-nav-item">
+              <a href="#" class="sidebar-nav-link" data-target="tracker">Трекер воды</a>
+          </li>
+          <li class="sidebar-nav-item">
+              <a href="#" class="sidebar-nav-link" data-target="activity">Активность</a>
+          </li>
+          <li class="sidebar-nav-item">
+              <a href="#" class="sidebar-nav-link" data-target="progress">Прогресс и цели</a>
+          </li>
+          <li class="nav-divider"></li>
+          <li class="sidebar-nav-item">
+              <a href="#" class="sidebar-nav-link" data-target="settings">Настройки</a>
+          </li>
+          <li class="sidebar-nav-item">
+              <a href="#" class="sidebar-nav-link" data-target="account">Управление аккаунтом</a>
+          </li>
+          <li class="sidebar-nav-item">
+              <a href="#" class="sidebar-nav-link" data-target="support">Справка и поддержка</a>
+          </li>
+      </ul>
+  </div>
+  
+  <div class="container">
+      <!-- Шапка (Header) -->
+      <header class="header">
+          <!-- Гамбургер-меню для мобильной версии -->
+          <div class="hamburger-menu" role="button" aria-label="Toggle Menu">
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+          </div>
+          
+          <!-- Логотип сайта -->
+          <a href="#" class="logo">
+              <img src="images/logo.png" alt="ЭкоВкус логотип" class="logo-img">
+          </a>
+          
+          <!-- Основная навигация -->
+          <nav class="nav" aria-label="Main navigation">
+              <a href="#about" class="nav-item">О нас</a>
+              <a href="#tariffs" class="nav-item">Тарифы</a>
+              <a href="#events" class="nav-item">Мероприятия</a>
+              <a href="#contacts" class="nav-item">Контакты</a>
+          </nav>
+          
+          <!-- Иконки уведомлений и профиля -->
+          <div class="user-actions">
+              <!-- Иконка уведомлений -->
+              <a href="#" class="notification-icon" aria-label="Уведомления">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.9 22 12 22ZM18 16V11C18 7.93 16.36 5.36 13.5 4.68V4C13.5 3.17 12.83 2.5 12 2.5C11.17 2.5 10.5 3.17 10.5 4V4.68C7.63 5.36 6 7.92 6 11V16L4 18V19H20V18L18 16Z" fill="#59a957"/>
+                  </svg>
+              </a>
+              <!-- Иконка профиля -->
+              <a href="#" class="profile-icon" aria-label="Профиль">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="#59a957"/>
+                  </svg>
+              </a>
+          </div>
+      </header>
+      
+      <!-- Секция "О нас" -->
+      <section id="about" class="main-section">
+          <div class="main-content">
+              <h1 class="main-title">
+                  Все грани <span class="circled-word">здоровья</span><br>
+                  в одном пространстве
+                  <span class="title-underline"></span>
+              </h1>
+              <p class="main-description">
+                  Комплексная онлайн платформа, <br>
+                  сопровождающая вас на всех этапах жизни
+              </p>
+              <a href="#tariffs" class="cta-button">
+                  <span class="arrow-icon">↓</span> Выбрать тариф
+              </a>
+              <div class="promo-notification">
+                  Мы уже подготовили выгодное <br>
+                  предложение для тебя
+                  <span class="promo-arrow">↗</span>
+              </div>
+          </div>
+          <div class="main-image">
+              <img src="images/woman.jpg" alt="Девушка в спортивной одежде">
+          </div>
+      </section>
+      
+      <!-- Секция "Тренировки" (по умолчанию скрыта через класс .hidden) -->
+      <section id="trainings" class="hidden">
+          <header class="header">
+              <div class="hamburger-menu" role="button" aria-label="Toggle Menu">
+                  <div class="hamburger-line"></div>
+                  <div class="hamburger-line"></div>
+                  <div class="hamburger-line"></div>
+              </div>
+              <a href="#" class="logo">
+                  <img src="images/logo.png" alt="ЭкоВкус логотип" class="logo-img">
+              </a>
+              <nav class="nav" aria-label="Main navigation">
+                  <!-- Можно добавить пункты меню, если нужно -->
+              </nav>
+              <div class="user-actions">
+                  <a href="#" class="notification-icon" aria-label="Уведомления">
+                      <!-- SVG иконка уведомлений -->
+                  </a>
+                  <a href="#" class="profile-icon" aria-label="Профиль">
+                      <!-- SVG иконка профиля -->
+                  </a>
+              </div>
+          </header>
+          <div class="trainings-container">
+              <!-- Левая колонка -->
+              <div class="trainings-left">
+                  <h1 class="trainings-title">Тренировки</h1>
+                  <div class="kcal-card">
+                      <h2 class="kcal-value">314 ккал</h2>
+                      <div class="kcal-chart">
+                          <!-- Здесь может быть холст canvas или svg‑график -->
+                      </div>
+                  </div>
+                  <div class="analysis-card">
+                      <h3>Анализы</h3>
+                      <ul class="analysis-list">
+                          <li>Прогресс: 0%</li>
+                          <li>Тренировки</li>
+                          <li>Питс</li>
+                      </ul>
+                  </div>
+              </div>
+              <!-- Правая колонка -->
+              <div class="trainings-right">
+                  <div class="encouragement">
+                      <p>Ты молодец!</p>
+                      <p>Осталось 2 тренировки до цели!</p>
+                  </div>
+                  <div class="metrics-card">
+                      <h3>Показатели</h3>
+                      <ul class="metrics-list">
+                          <li>ИНТ: 40%</li>
+                          <li>Прогресс: 25%</li>
+                          <li>Тренировки: 35%</li>
+                          <li>Питс: 0%</li>
+                      </ul>
+                  </div>
+                  <div class="person-figure">
+                      <img src="images/human-silhouette.png" alt="Силуэт человека">
+                  </div>
+              </div>
+          </div>
+      </section>
+      
+      <!-- Секция с блоками предложений -->
+      <section class="offers-section">
+          <div class="offer-card">
+              "Предложение о скидке"
+          </div>
+          <div class="offer-card">
+              "Бонус"
+          </div>
+      </section>
+      
+      <!-- Секция преимуществ -->
+      <section class="benefits-section">
+          <div class="benefit-cloud benefit-cloud-1">
+              Доступ к постоянно обновляющемуся контенту
+          </div>
+          <img src="images/yoga.jpg" alt="Силуэт в позе йоги" class="yoga-image">
+          <div class="benefit-cloud benefit-cloud-2">
+              Онлайн и оффлайн мероприятия
+          </div>
+          <div class="benefit-cloud benefit-cloud-3">
+              AI - консультант и 3D-модель вашего тела
+          </div>
+          <div class="benefit-cloud benefit-cloud-4">
+              Индивидуальный и комплексный подход на основе глубокого анализа вашего организма
+          </div>
+      </section>
+      
+      <!-- Секция тарифов -->
+      <section id="tariffs" class="tariffs-section">
+          <h2 class="tariffs-title">Тарифы</h2>
+          <div class="tariffs-container">
+              <div class="tariff-card">
+                  <h3 class="tariff-name">Базовый</h3>
+                  <div class="tariff-feature">"Функционал"</div>
+                  <div class="tariff-price">2 550 ₽</div>
+              </div>
+              <div class="tariff-card">
+                  <h3 class="tariff-name">Оптимальный</h3>
+                  <div class="tariff-feature">"Функционал"</div>
+                  <div class="tariff-price">5 550 ₽</div>
+              </div>
+              <div class="tariff-card">
+                  <h3 class="tariff-name">Премиум</h3>
+                  <div class="tariff-feature">"Функционал"</div>
+                  <div class="tariff-price">10 550 ₽</div>
+              </div>
+          </div>
+      </section>
+      
+      <!-- Секция мероприятий -->
+      <section id="events" class="events-section">
+          <h2 class="events-title">Мероприятия</h2>
+          <div class="events-gallery">
+              <div class="gallery-item-1">
+                  <img src="images/event1.jpg" alt="Спортсменка в черной одежде" class="gallery-img">
+              </div>
+              <div class="gallery-item-2">
+                  <img src="images/event2.jpg" alt="Девушка выполняет растяжку" class="gallery-img">
+              </div>
+              <div class="gallery-item-3">
+                  <img src="images/event3.jpg" alt="Групповое занятие йогой" class="gallery-img">
+              </div>
+              <div class="gallery-item-4">
+                  <img src="images/event4.jpg" alt="Групповая тренировка" class="gallery-img">
+              </div>
+          </div>
+          <div class="divider"></div>
+          <footer class="footer">
+              <a href="#" class="logo footer-logo">
+                  <img src="images/logo.png" alt="ЭкоВкус логотип" class="logo-img">
+              </a>
+              <p class="footer-caption">MVP-версия платформы ЭкоВкус 2025</p>
+          </footer>
+      </section>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
