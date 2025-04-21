@@ -185,7 +185,7 @@ body {
     line-height: 1.4;
 
     /* Можно чуть уменьшить, чтобы текст был компактнее */
-    margin-bottom: 0px;
+    margin-bottom: 60px;
     width: 230px;
     padding-top: 15px;
 }
@@ -204,7 +204,7 @@ body {
     width: 150px;
     height: 30px;
     text-align: center;
-    margin-top: 130px;
+    margin-top: 60px;
     margin-left: 80px;
 }
 
@@ -415,7 +415,7 @@ body {
 
     /* Вместо top: -45px используем margin-top,
      чтобы поднять блоки выше относительно предыдущей секции */
-    margin-top: -190px;
+    margin-top: -170px;
 
     /* Можешь увеличить абсолютную величину, если нужно ещё выше */
     position: relative;
